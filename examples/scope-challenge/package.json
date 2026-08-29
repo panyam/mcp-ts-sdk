@@ -1,0 +1,28 @@
+{
+    "name": "@mcp-examples/scope-challenge",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "server": "tsx server.ts"
+    },
+    "dependencies": {
+        "@modelcontextprotocol/express": "workspace:*",
+        "@modelcontextprotocol/node": "workspace:*",
+        "@modelcontextprotocol/server": "workspace:*",
+        "jose": "catalog:runtimeClientOnly",
+        "zod": "catalog:runtimeShared"
+    },
+    "devDependencies": {
+        "tsx": "catalog:devTools"
+    },
+    "example": {
+        "transports": [
+            "http"
+        ],
+        "era": "modern",
+        "path": "/mcp",
+        "excluded": "needs an external authorization server (Keycloak or Okta fixture); driven by the panyam/mcpconformance scope-challenge scenario, not by run:examples",
+        "shapeExempt": "Conformance SUT, not a single-feature story: the conformance scenario is the client, so there is no client.ts.",
+        "//": "SEP-2350 server-side scope challenges against a real AS. Provider-neutral: OIDC discovery from ISSUER plus a scp/scope/scopes-agnostic verifier. Covers both callback shapes, an OR hierarchy and an argument-dependent challenge."
+    }
+}

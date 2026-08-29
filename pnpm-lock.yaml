@@ -971,6 +971,28 @@ importers:
         specifier: catalog:devTools
         version: 4.21.0
 
+  examples/scope-challenge:
+    dependencies:
+      '@modelcontextprotocol/express':
+        specifier: workspace:*
+        version: link:../../packages/middleware/express
+      '@modelcontextprotocol/node':
+        specifier: workspace:*
+        version: link:../../packages/middleware/node
+      '@modelcontextprotocol/server':
+        specifier: workspace:*
+        version: link:../../packages/server
+      jose:
+        specifier: catalog:runtimeClientOnly
+        version: 6.2.2
+      zod:
+        specifier: catalog:runtimeShared
+        version: 4.3.6
+    devDependencies:
+      tsx:
+        specifier: catalog:devTools
+        version: 4.21.0
+
   examples/scoped-tools:
     dependencies:
       '@mcp-examples/oauth':
